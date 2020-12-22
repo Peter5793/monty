@@ -1,7 +1,7 @@
 #include "monty.h"
 /**
  * _pop - a new item at the top of the list
- * @stack:  pointer to the top of the stack 
+ * @stack:  pointer to the top of the stack
  * @line_number: line counter
  */
 void _pop(stack_t **stack, unsigned int line_number)
@@ -27,8 +27,8 @@ void _pop(stack_t **stack, unsigned int line_number)
 	}
 }
 /**
- * _add - add the first two elements of stack 
- * @stack: pointer to the top of the stack 
+ * _add - add the first two elements of stack
+ * @stack: pointer to the top of the stack
  * @line_number: line counter
  */
 void _add(stack_t **stack, unsigned int line_number)
@@ -41,17 +41,18 @@ void _add(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 	addition = (*stack)->n;
-	(*stack)->next-> += addition;
+	(*stack)->next->n += addition;
 	_pop(stack, line_number);
 }
 /**
- * _div - divide the two first elements of the stack 
- * @stack: pointer to the top of the stack 
+ * _div - divide the two first elements of the stack
+ * @stack: pointer to the top of the stack
  * @line_number: line counter
  */
 void _div(stack_t **stack, unsigned int line_number)
 {
 	int division;
+
 	if (!*stack || !(*stack)->next)
 	{
 		fprintf(stderr, "L%d: can't div, stack too short\n", line_number);
@@ -67,13 +68,14 @@ void _div(stack_t **stack, unsigned int line_number)
 	_pop(stack, line_number);
 }
 /**
- * _mode - computes the rest of the division of the seconf top element
- * @stack: pointer to the top of the stack 
+ * _mod - computes the rest of the division of the seconf top element
+ * @stack: pointer to the top of the stack
  * @line_number: line counter
  */
-void _mod(stack_t **stack, unsigned int line_numbe)
+void _mod(stack_t **stack, unsigned int line_number)
 {
 	int module;
+
 	if (!*stack || !(*stack)->next)
 	{
 		fprintf(stderr, "L%d: can't mod, stack too short\n", line_number);
@@ -87,4 +89,4 @@ void _mod(stack_t **stack, unsigned int line_numbe)
 	}
 	(*stack)->next->n %= module;
 	_pop(stack, line_number);
-}	
+}

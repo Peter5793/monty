@@ -60,7 +60,7 @@ void _mul(stack_t **stack, unsigned int line_number);
 void _div(stack_t **stack, unsigned int line_number);
 void _mod(stack_t **stack, unsigned int line_number);
 void _rotr(stack_t **stack, unsigned int line_number);
-void _rotl(stack_t **stack, unsigned int line_number);
+//void _rotl(stack_t **stack, unsigned int line_number);
 
 stack_t *add_dnodeint_end(stack_t **head, int n);
 int delete_dnodeint_at_index(stack_t **head, unsigned int idx);

@@ -1,23 +1,5 @@
 #include "monty.h"
 /**
- * _rot1 - rotates the top to the bottom
- * @stack: pointer to the top of the stack
- * @line_number: line counter
- */
-void _rot1(stack_t **stack, unsigned int line_number)
-{
-	stack_t *temp = *stack;
-	int n;
-	(void)line_number;
-
-	if ((*stack != NULL) && (stack != NULL) && ((*stack)->next != NULL))
-	{
-		n = temp->n;
-		delete_dnodeint_at_index(stack, 0);
-		add_dnodeint_end(stack, n);
-	}
-}
-/**
  * delete_dnodeint_at_index - frees memory from a given index
  * @head: pointer to the first node
  * @idx: index of the node to delete
@@ -73,7 +55,7 @@ stack_t *add_dnodeint_end(stack_t **head, int n)
 	if (new_node == NULL)
 		return (NULL);
 	new_node->n = n;
-	new_node->next =NULL;
+	new_node->next = NULL;
 	if (!*head)
 	{
 		new_node->prev = NULL;

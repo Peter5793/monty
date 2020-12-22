@@ -1,7 +1,7 @@
 #include "monty.h"
 /**
  * _push -adds a new item to tr top of a stack
- * @stack: pointer to the top of the stack 
+ * @stack: pointer to the top of the stack
  * @line_number: line counter
  */
 void _push(stack_t **stack, unsigned int line_number)
@@ -17,9 +17,9 @@ void _push(stack_t **stack, unsigned int line_number)
 			fprintf(stderr, "Error: malloc failed");
 			exit(EXIT_FAILURE);
 		}
-		n_node-> = value[0];
+		n_node->n = value[0];
 		n_node->prev = NULL;
-		n_node-> = *stack;
+		n_node->next = *stack;
 
 		if (*stack != NULL)
 			(*stack)->prev = n_node;
@@ -29,8 +29,8 @@ void _push(stack_t **stack, unsigned int line_number)
 		add_dnodeint_end(stack, value[0]);
 }
 /**
- * _pall - print all elements of stack 
- * @stack: pointer to the top of the stack 
+ * _pall - print all elements of stack
+ * @stack: pointer to the top of the stack
  * @line_number: line counter
  */
 void _pall(stack_t **stack, unsigned int line_number)
@@ -48,22 +48,22 @@ void _pall(stack_t **stack, unsigned int line_number)
 	}
 }
 /**
- * _pint - prints  the top pof the stack 
- * @stack: pointer to the top of the stack 
+ * _pint - prints  the top pof the stack
+ * @stack: pointer to the top of the stack
  * @line_number: liner counter
  */
-void _pint(stack_t **stack, usigned int line_number)
+void _pint(stack_t **stack, unsigned int line_number)
 {
 	if (stack == NULL || *stack == NULL)
 	{
-		fprintf(stderr, "%: Can't print, stacj empty\n", line_number);
+		fprintf(stderr, "L%d: Can't print, stacj empty\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	printf("%d\n", (*stack)->n);
 }
 /**
- * _swap - swaps the first two elements of the stack 
- * @stack: pointer to the top of the stack 
+ * _swap - swaps the first two elements of the stack
+ * @stack: pointer to the top of the stack
  * @line_number: line counter
  */
 void _swap(stack_t **stack, unsigned int line_number)
@@ -78,12 +78,12 @@ void _swap(stack_t **stack, unsigned int line_number)
 	}
 	first_n = temp->n;
 	sec_n = temp->next->n;
-	temp->next->n = first_n; 
-	temp-> = sec_n;
+	temp->next->n = first_n;
+	temp->n = sec_n;
 }
 /**
  * _nop - does nothing
- * @stack: pointer to the top of the stack 
+ * @stack: pointer to the top of the stack
  * @line_number: line counter
  */
 void _nop(stack_t **stack, unsigned int line_number)

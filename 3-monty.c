@@ -1,7 +1,7 @@
 #include "monty.h"
 /**
  * _sub - subtract the two first elements of stack
- * @stack: pointer to the top of the stack 
+ * @stack: pointer to the top of the stack
  * @line_number: line counter
  */
 void _sub(stack_t **stack, unsigned int line_number)
@@ -38,9 +38,9 @@ void _mul(stack_t **stack, unsigned int line_number)
 /**
  * _pchar - Print a char with ASCII value
  * @stack: pointer to the top of the stack
- * line_number: line counter
+ * @line_number: line counter
  */
- void _pchar(stack_t **stack, unsigned int line_number)
+void _pchar(stack_t **stack, unsigned int line_number)
 {
 	int code;
 
@@ -53,7 +53,7 @@ void _mul(stack_t **stack, unsigned int line_number)
 	if (code >= 0 && code <= 127)
 	{
 		putchar(code);
-		putcahr(10);
+		putchar(10);
 	}
 	else
 	{
@@ -90,8 +90,8 @@ void _pstr(stack_t **stack, unsigned int line_number)
 	}
 }
 /**
- * _rotr - rotates the stack to the bottom 
- * @stack: pointer to the top of the stack 
+ * _rotr - rotates the stack to the bottom
+ * @stack: pointer to the top of the stack
  * @line_number: line counter
  */
 void _rotr(stack_t **stack, unsigned int line_number)
